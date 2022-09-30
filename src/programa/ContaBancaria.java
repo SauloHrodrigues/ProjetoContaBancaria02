@@ -8,15 +8,15 @@ public class ContaBancaria {
     public static void main(String[] args) {
         //System.out.println("Opção retornada = "+menuPrincipal());
         Scanner input = new Scanner(System.in);
-        boolean opcao = true;
-        while (opcao) {
+        int opcao=-1;
+        do {
             switch (menuPrincipal(input)) {
                 case 0:
-                    opcao=false;
+                    opcao = 0;
                     break;
                 case 1:
-                    System.out.println("abrir conta (Implementar)");
-
+                    //System.out.println("abrir conta (Implementar)");
+                    abrirConta(input);
                     break;
                 case 2:
                     System.out.println("Consultar conta (Implementar)");
@@ -35,8 +35,12 @@ public class ContaBancaria {
                     System.out.println("Realizar saque (Implementar)");
                     break;
                 default:
+                    System.out.println("testando o default");
             }
-        }
+
+        }while (opcao!=0);
+
+        input.close();
     }
     public static int menuPrincipal(Scanner input){
 
@@ -50,8 +54,13 @@ public class ContaBancaria {
         System.out.println("5 - Realizar depósito em Conta:");
         System.out.println("0 - Sair do Programa:");
         System.out.print("Digite a opção desejada: ");
-        //testando commit
         int opcao = input.nextInt();
         return opcao;
+    }
+    public static void abrirConta(Scanner input){
+        System.out.println("------------------------------");
+        System.out.println("----- ABRIR CONTA ------------");
+        System.out.println("------------------------------");
+        System.out.println("");
     }
 }
